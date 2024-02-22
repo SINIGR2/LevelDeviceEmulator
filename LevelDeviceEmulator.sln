@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelDeviceEmulator", "LevelDeviceEmulator\LevelDeviceEmulator.csproj", "{648D23BF-5D7B-4FB7-BA24-BF06595697B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelDeviceEmulator", "LevelDeviceEmulator\LevelDeviceEmulator.csproj", "{08BA3967-7B75-4F5C-8B7E-4E83AFACB26D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{648D23BF-5D7B-4FB7-BA24-BF06595697B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{648D23BF-5D7B-4FB7-BA24-BF06595697B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{648D23BF-5D7B-4FB7-BA24-BF06595697B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{648D23BF-5D7B-4FB7-BA24-BF06595697B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{08BA3967-7B75-4F5C-8B7E-4E83AFACB26D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{08BA3967-7B75-4F5C-8B7E-4E83AFACB26D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{08BA3967-7B75-4F5C-8B7E-4E83AFACB26D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{08BA3967-7B75-4F5C-8B7E-4E83AFACB26D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

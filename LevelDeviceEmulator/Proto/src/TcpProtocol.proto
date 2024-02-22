@@ -1,0 +1,132 @@
+﻿syntax = "proto3";
+package google.protobuf;
+option csharp_namespace = "ProtoSharp.Tcp";
+
+message mio_to_mdsp_tcp_pack {
+  uint32 pack_number = 1;
+  uint32 command_ID = 2;
+  oneof mio_to_mdsp_tcp_message
+  {
+    mio_to_mdsp_tcp_setconfig config = 3;
+    mio_to_mdsp_marker_freq_pool_request marker_freq_pool = 4;
+    mio_to_mdsp_tcp_settriggers triggers = 5;
+  }
+}
+
+message mio_to_mdsp_tcp_setconfig
+{
+  uint32 metadata = 1;
+  double cf = 2;
+  double span = 3;
+  double rbw = 4;
+  double vbw = 5;
+  double ref_level = 6;
+  double sweep_time = 7;
+  double fft_win = 8;
+  uint32 detector_len = 9;
+  uint32 datatype_mask = 10;
+  uint32 port_number = 11;
+}
+
+message mio_to_mdsp_marker_freq_request
+{
+  uint32 marker_idx = 1;
+  uint32 marker_data_type = 2;
+  double marker_approximation = 3;
+  uint32 marker_detector_type = 4;
+}
+
+message mio_to_mdsp_marker_freq_pool_request
+{
+  uint32 marker_count = 1;
+  repeated mio_to_mdsp_marker_freq_request pool = 2;
+}
+
+message mio_to_mdsp_tcp_settriggers
+{
+  oneof triggers
+  {
+    trigger_freerun freerun = 1;
+    trigger_detector detector = 2;
+    trigger_bwburst bwburst = 3;
+    trigger_trgin trgin = 4;
+    trigger_periodictimer periodictimer = 5;
+  }
+}
+
+//Triggers section
+message trigger_freerun
+{
+  
+}
+
+message trigger_detector
+{
+  
+}
+
+message trigger_bwburst
+{
+  
+}
+
+message trigger_trgin
+{
+  
+}
+
+message trigger_periodictimer
+{
+  
+}
+//End triggers section
+
+message mdsp_to_mio_tcp_pack {
+  uint32 request_pack_number = 1;
+  uint32 status = 2;
+  oneof mdsp_to_mio_tcp_message
+  {
+    mdsp_to_mio_tcp_hello hello = 3;
+  }
+}
+
+message mdsp_to_mio_tcp_hello
+{
+  uint32 major = 1;
+  uint32 minor = 2;
+}
+
+message mdsp_to_mio_udp_pack {
+  uint32 config_meta_data = 1;
+  oneof mdsp_to_mio_udp_pack
+  {
+    mdsp_to_mio_detectors detectors = 2;
+    mdsp_to_mio_marker_freq_pool_response markers_freq = 3;
+    mdsp_to_mio_span_params span_params = 4;
+  }
+}
+
+message mdsp_to_mio_detectors{
+  uint32 data_count = 1;
+  uint32 first_data_number = 2;
+  uint32 data_type = 3;
+  repeated double data = 4;
+
+}
+
+message mdsp_to_mio_marker_freq_response
+{
+  uint32 marker_idx = 1;
+  double marker_freq = 2;
+}
+
+message mdsp_to_mio_marker_freq_pool_response
+{
+  uint32 marker_count = 1;
+  repeated mdsp_to_mio_marker_freq_response pool = 2;
+}
+
+message mdsp_to_mio_span_params
+{
+  double sweep_time = 1;
+}
